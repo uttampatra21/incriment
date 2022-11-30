@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box ;
+}
+body{
+    background-color: #183153;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+.count-container{
+    text-align: center;
+    color: #fff;
+}
+.count-container span{
+    font-weight: bold;
+}
+.main-contner{
+    display: flex;
+}
+.main-contner div{
+    padding: 0px 50px;
+}
+.counter{
+    color: yellowgreen;
+    font-size: 40px;
+    font-weight: bold;
+}
+

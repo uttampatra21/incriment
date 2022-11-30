@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>increment user data</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- <script src="index.js"></script> -->
+    <script src="https://kit.fontawesome.com/2abb031fe6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-contner">
+        <div class="count-container">
+            <i class="fa-solid fa-mug-hot fa-3x"></i>
+            <div class="counter" data-target="4000"></div>
+            <span>Project compleate</span>
+        </div>
+        <div class="count-container">
+            <i class="fa-solid fa-users fa-3x"></i>
+            <div class="counter" data-target="15000"></div>
+            <span>Our Happy clients</span>
+        </div>
+        <div class="count-container">
+            <i class="fa-solid fa-tasks fa-3x"></i>
+            <div class="counter" data-target="500"></div>
+            <span>OnGoing Projects</span>
+        </div>
+    </div>
+
+    
+
+
+    <script>
+
+        const counters = document.querySelectorAll('.counter'); 
+        counters.forEach((counter) =>{
+            counter.innerHTML = '0'
+
+            const updateCounter = () => {
+                const targetCount = +counter.getAttribute('data-target');
+                // console.log(targetCount);
+                const startingNum = Number(counter.innerHTML);
+
+                const incr = targetCount / 100 ;
+                if( startingNum < targetCount ){
+                    counter.innerHTML = `${Math.round(startingNum + incr)}`;
+                    setTimeout( updateCounter , 10);
+                }else{
+                    counter.innerHTML = targetCount;
+                }
+            }
+            updateCounter();
+
+        }) 
+ 
+    </script>
+
+
+</body>
+</html>
